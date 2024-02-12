@@ -1,0 +1,11 @@
+/* app.component.css */
+
+header {
+    margin-bottom: 50px; /* Adjust the value as needed */
+  }
+  
+  /* Optionally, you can also add padding or margin to the section if needed */
+  section {
+    margin-top: 50px; /* This is optional and can be adjusted or removed based on your design */
+  }
+  

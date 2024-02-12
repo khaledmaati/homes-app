@@ -1,0 +1,23 @@
+.card {
+    /* Set a fixed width to maintain uniform size, adjust as needed */
+    width: 300px; 
+    /* Ensure the card has a defined height */
+    height: auto; 
+    /* Additional styling for the card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.listing-photo {
+    /* Set the height of the image */
+    height: 18rem; 
+    /* Ensure the image covers the area without losing its aspect ratio */
+    object-fit: cover; 
+    /* Set the width to 100% to ensure it fills the card */
+    width: 100%;
+}
