@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CardComponent } from './card/card.component';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   standalone: true,
   selector: 'app-root',
-  imports: [NavbarComponent, CardComponent],
+  imports: [NavbarComponent, CardComponent, RouterModule],
 
   template: `
   <main>
@@ -14,7 +16,7 @@ import { CardComponent } from './card/card.component';
     </header>
 
     <section>
-      <app-card></app-card>
+      <router-outlet></router-outlet>
     </section>
   </main>
   `,
