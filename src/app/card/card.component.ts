@@ -1,19 +1,25 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Property } from './Property';
+import { RouterModule } from '@angular/router';
+import { HousingService } from '../housing.service';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class CardComponent implements OnInit {
   propertyListings: Property[] = []; // Initialized as an empty array
+  housingService: HousingService = inject(HousingService);
 
-  constructor() {}
+  constructor() {
+    this.propertyListings = this.housingService.getAllProperty();
+  }
 
   ngOnInit(): void {
     this.propertyListings = this.getPropertyListings();
