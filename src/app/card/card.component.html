@@ -1,16 +1,13 @@
-
-  
-  <!-- Container to apply flex display -->
-  <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-    <!-- Loop over each property in PropertyListing array -->
-    <div *ngFor="let property of PropertyListing" class="card">
-      <!-- Image with fixed height and object-fit -->
-      <img class="listing-photo" [src]="property.photo" alt="Photo of the property">
-      <div class="Listing">
-        <h5 class="listing-heading">{{ property.name }}</h5>
-        <p class="listing-location">{{ property.city }}, {{ property.state }}</p>
-        <a href="#" class="btn btn-primary">Buy Now!</a>
-      </div>
+<!-- Container to apply flex display -->
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+  <!-- Loop over each property in PropertyListing array -->
+  <div *ngFor="let property of propertyListings" class="card">
+    <!-- Image with fixed height and object-fit -->
+    <img class="listing-photo" [src]="property.photo" alt="Photo of the property">
+    <div class="Listing">
+      <h5 class="listing-heading">{{ property.name }}</h5>
+      <p class="listing-location">{{ property.city }}, {{ property.state }}</p>
+      <a href="#" class="btn btn-primary">Buy Now!</a>
     </div>
   </div>
-  
+</div>
