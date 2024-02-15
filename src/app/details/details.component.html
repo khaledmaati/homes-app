@@ -1,1 +1,12 @@
-<p> vjh {{property?.id}} </p>
+<div *ngFor="let property of properties" class="property-card">
+    <h2>{{ property.name }}</h2>
+    <img src="{{ property.photo }}" alt="Photo of {{ property.name }}" class="property-photo">
+    <p><strong>Location:</strong> {{ property.city }}, {{ property.state }}</p>
+    <p><strong>Available Units:</strong> {{ property.availableUnits }}</p>
+    <p><strong>Facilities:</strong>
+      <span *ngIf="property.wifi">WiFi,</span>
+      <span *ngIf="property.laundry">Laundry</span>
+      <span *ngIf="!property.wifi && !property.laundry">None</span>
+    </p>
+  </div>
+  

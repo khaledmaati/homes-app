@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Property } from './card/Property';
-import { promise } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
+
 })
+
 export class HousingService {
-  protected propertyList: Property [] = [
+  propertyList: Property [] = [
     {
       id: 0,
       name: 'Acme Fresh Start Housing',

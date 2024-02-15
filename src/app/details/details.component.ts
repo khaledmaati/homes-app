@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { HousingService } from '../housing.service';
@@ -11,15 +11,14 @@ import { Property } from '../card/Property';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css'],
 })
-export class DetailsComponent {
-    route: ActivatedRoute = inject(ActivatedRoute);
-    housingService = inject(HousingService);
-    property: Property | undefined;
+export class DetailsComponent implements OnInit {
+  constructor(private housingService: HousingService) { }
 
-    ngOnInit() {
-      this.route.paramMap.subscribe(params => {
-        const propertyId = Number(params.get('id'));
-      });
-    }
+  properties: Property[] = [];
 
+  ngOnInit() {
+    this.properties = this.housingService.getAllProperty();
+  }
+  
 }
+
